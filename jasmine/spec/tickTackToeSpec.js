@@ -39,4 +39,10 @@ beforeEach(function() {
     expect(winningSolutions).toEqual([['X',2,3,],[4,5,6],[7,8,9],['X',4,7],[2,5,8],[3,6,9],['X',5,9],[3,5,7]]);
   });
 
+  it("the winningSolutions array can be altered", function() {
+    game.choose('X',1, grid);
+    expect(winningSolutions).toEqual([['X',2,3,],[4,5,6],[7,8,9],['X',4,7],[2,5,8],[3,6,9],['X',5,9],[3,5,7]]);
+  });
+
+
 });
