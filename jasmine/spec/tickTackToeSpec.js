@@ -30,9 +30,9 @@ beforeEach(function() {
     expect(game._grid).toEqual([['X',2,3],[4,5,6],[7,8,9]]);
   });
 
-  // it("a players choice is also marked on possible solutions", function() {
-  //   game.choose('x',1);
-  //   expect(game._winningSolutions).toEqual();
+  // it("the winningSolutions array can be altered", function() {
+  //   game.choose('X',1, winningSolutions);
+  //   expect(winningSolutions).toEqual([['X',2,3,],[4,5,6],[7,8,9],['X',4,7],[2,5,8],[3,6,9],['X',5,9],[3,5,7]]);
   // });
 
 });

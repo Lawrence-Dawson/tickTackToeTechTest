@@ -7,12 +7,20 @@ function Game() {
 
 Game.prototype.choose = function (letter, gridRef) {
   var L = letter;
-  var gr = gr;
-  if (this._grid.indexOf(L)) {
-    throw new Error("That location choice has already been taken!");
-  }
-  else {
-    this._grid = [[L,2,3],[4,5,6],[7,8,9]];
-  }
+  var gr = gridRef;
 
-};
+  if (this._grid.indexOf(L) === false) {
+    throw new Error("That location choice has already been taken!");
+    }
+  else {
+    for(var i = 0; i < this._grid.length; i++) {
+        var section = this._grid[i];
+
+        for(var j = 0; j < section.length; j++) {
+            if (section[j] === gridRef) {
+              section[j] = L;
+            }
+          }
+        }
+      }
+  };
