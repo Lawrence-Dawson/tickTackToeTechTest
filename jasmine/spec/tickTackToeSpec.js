@@ -61,14 +61,14 @@ describe('winning', function() {
     });
     it('game knows when X is a winner', function() {
       game.choose('X', 1, grid);
-      expect(game.winner()).toEqual("X,X,X");
+      expect(game.winner()).toEqual("X");
     });
 
     it('game knows when O is a winner', function() {
       game.choose('O', 1, grid);
-      expect(game.winner()).toEqual("O,O,O");
+      expect(game.winner()).toEqual("O");
     });
-    
+
     it('game knows when there is not a winner', function() {
       game.choose('Z', 7, grid);
       expect(game.winner('Z')).not.toBe('Z');

@@ -32,11 +32,11 @@ var grid = [[1,2,3],
     for (var i = 0; i < winningSolutions.length; i++) {
       var arrSection = winningSolutions[i].toString();
     if (arrSection === "X,X,X") {
-      return arrSection;
+      return arrSection[0];
     }
     else {
       if (arrSection === "O,O,O") {
-        return arrSection;
+        return arrSection[0];
       }
     }
   }
