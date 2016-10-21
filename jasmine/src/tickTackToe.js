@@ -11,25 +11,25 @@ function Game() {
 
   Game.prototype.play = function (letter, gridNum) {
 
-  choose(letter, gridNum, this._winningSolutions);
-  choose(letter, gridNum, this._grid);
+    choose(letter, gridNum, this._grid);
 
-  function choose(letter, gridNum, array) {
-      if (array.indexOf(letter) === false) {
-        throw new Error("That location choice has already been taken!");
-        }
-      else {
-        for(var i = 0; i < array.length; i++) {
-            var arrSection = array[i];
+    function choose(letter, gridNum, array) {
+        if (array.indexOf(letter) === false) {
+          throw new Error("That location choice has already been taken!");
+          }
+        else {
+          for(var i = 0; i < array.length; i++) {
+              var arrSection = array[i];
 
-        for(var j = 0; j < arrSection.length; j++) {
-            if (arrSection[j] === gridNum) {
+          for(var j = 0; j < arrSection.length; j++) {
+              if (arrSection[j] === gridNum) {
                   arrSection[j] = letter;
+                  choose(letter, gridNum, game._winningSolutions);
+                  }
                 }
               }
             }
           }
-        }
 
   Game.prototype.winner = function () {
     for (var i = 0; i < this._winningSolutions.length; i++) {
