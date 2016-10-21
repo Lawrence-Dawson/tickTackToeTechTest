@@ -9,20 +9,28 @@ var grid = [[1,2,3],
             [4,5,6],
             [7,8,9]];
 
-Game.prototype.choose = function (letter, gridRef, array) {
-  if (array.indexOf(letter) === false) {
-    throw new Error("That location choice has already been taken!");
-    }
-  else {
-    for(var i = 0; i < array.length; i++) {
-        var arrSection = array[i];
+  Game.prototype.choose = function (letter, gridNum, array) {
+    if (array.indexOf(letter) === false) {
+      throw new Error("That location choice has already been taken!");
+      }
+    else {
+      for(var i = 0; i < array.length; i++) {
+          var arrSection = array[i];
 
-    for(var j = 0; j < arrSection.length; j++) {
-        if (arrSection[j] === gridRef) {
-              arrSection[j] = letter;
-              game.choose(letter, gridRef, winningSolutions);
+      for(var j = 0; j < arrSection.length; j++) {
+          if (arrSection[j] === gridNum) {
+                arrSection[j] = letter;
+                game.choose(letter, gridNum, winningSolutions);
+              }
             }
           }
         }
+      };
+
+  Game.prototype.winner = function (letter) {
+    for (var i = 0; i < winningSolutions.length; i++) {
+      if (winningSolutions[i] === ['X','X','X'] || ['O','O','O']) {
+        return letter;
       }
-    };
+    }
+  };

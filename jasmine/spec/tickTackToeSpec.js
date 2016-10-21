@@ -59,10 +59,9 @@ describe('winning', function() {
             [4,'X','O'],
             [7,8,'X']];
     });
-    it('a player wins the game', function() {
+    it('game checks to see if theres a winner', function() {
       game.choose('X', 1, grid);
-      console.log(winningSolutions);
-      expect(game.winner).toEqual('X');
+      expect(game.winner('X')).toEqual('X');
     });
   });
 });
