@@ -90,11 +90,11 @@ describe('winning', function() {
       game._grid = [[1,'X','O'],
                     ['O','O','X'],
                     ['X','O','X']];
-      this._plays = 1;
+      game._plays = 1;
       });
+
       it('game knows when theres a draw', function() {
-        game.play('X', 1);
-        expect(gameStatus()).toEqual('Draw');
+        expect(game.play('X', 1)).toEqual('Draw');
       });
     });
 });

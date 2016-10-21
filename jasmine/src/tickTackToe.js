@@ -11,7 +11,6 @@ function Game() {
 }
 
   Game.prototype.play = function (letter, gridNum) {
-
     this._plays -= 1;
     choose(letter, gridNum, this._grid);
 
@@ -27,12 +26,13 @@ function Game() {
               if (arrSection[j] === gridNum) {
                   arrSection[j] = letter;
                   choose(letter, gridNum, game._winningSolutions);
-                  }
                 }
               }
             }
           }
-        };
+        }
+        return game.gameStatus();
+      };
 
     Game.prototype.winner = function () {
       for (var i = 0; i < this._winningSolutions.length; i++) {
@@ -46,11 +46,8 @@ function Game() {
       }
   };
 
-  function gameStatus() {
-    if (this._plays > 0 ) {
-      return 'Game still all to play for!!';
-    }
-    else {
+  Game.prototype.gameStatus = function () {
+    if (this._plays === 0 ) {
       return 'Draw';
-    }
-  }
+      }
+    };
