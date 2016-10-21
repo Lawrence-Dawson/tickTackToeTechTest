@@ -70,8 +70,8 @@ describe('winning', function() {
     });
 
     it('game knows when there is not a winner', function() {
-      game.choose('Z', 7, grid);
-      expect(game.winner('Z')).not.toBe('Z');
+      game.choose('X', 7, grid);
+      expect(game.winner('X')).not.toBe('X');
     });
 
   });
