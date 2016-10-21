@@ -51,6 +51,13 @@ describe('player makes a choice', function() {
     game.play('X',1);
     expect(game._winningSolutions).toEqual([['X',2,3,],[4,5,6],[7,8,9],['X',4,7],[2,5,8],[3,6,9],['X',5,9],[3,5,7]]);
   });
+
+  it("each play reduces number of plays left by one", function() {
+    game.play('X',1);
+    expect(game._plays).toEqual(8);
+  });
+
+
 });
 
 describe('winning', function() {
@@ -76,4 +83,18 @@ describe('winning', function() {
     });
 
   });
+
+  describe('drawing', function() {
+    beforeEach(function() {
+      game._winningSolutions = [[1,'X','O',],['O','O','X'],['X','O','X'],['X','O','X'],['X','O','O'],['O','X','X'],['X','O','X'],['O','O','X']];
+      game._grid = [[1,'X','O'],
+                    ['O','O','X'],
+                    ['X','O','X']];
+      this._plays = 1;
+      });
+      it('game knows when theres a draw', function() {
+        game.play('X', 1);
+        expect(gameStatus()).toEqual('Draw');
+      });
+    });
 });

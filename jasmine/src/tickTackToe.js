@@ -6,11 +6,13 @@ function Game() {
   this._grid = [[1,2,3],
               [4,5,6],
               [7,8,9]];
+  this._plays = 9;
 
 }
 
   Game.prototype.play = function (letter, gridNum) {
 
+    this._plays -= 1;
     choose(letter, gridNum, this._grid);
 
     function choose(letter, gridNum, array) {
@@ -34,14 +36,21 @@ function Game() {
   Game.prototype.winner = function () {
     for (var i = 0; i < this._winningSolutions.length; i++) {
       var arrSection = this._winningSolutions[i].toString();
-    if (arrSection === "X,X,X") {
-      return arrSection[0];
-    }
-    else {
-      if (arrSection === "O,O,O") {
+      if (arrSection === "X,X,X") {
         return arrSection[0];
       }
+      else if (arrSection === "O,O,O") {
+          return arrSection[0];
+      }
+    }
+  };
+};
+
+  function gameStatus() {
+    if (this._plays > 0 ) {
+      return 'Game still all to play for!!';
+    }
+    else {
+      return 'Draw';
     }
   }
-};
-};
