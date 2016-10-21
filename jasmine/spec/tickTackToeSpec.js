@@ -59,9 +59,20 @@ describe('winning', function() {
             [4,'X','O'],
             [7,8,'X']];
     });
-    it('game checks to see if theres a winner', function() {
+    it('game knows when X is a winner', function() {
       game.choose('X', 1, grid);
-      expect(game.winner('X')).toEqual('X');
+      expect(game.winner()).toEqual("X,X,X");
     });
+
+    it('game knows when O is a winner', function() {
+      game.choose('O', 1, grid);
+      expect(game.winner()).toEqual("O,O,O");
+    });
+    
+    it('game knows when there is not a winner', function() {
+      game.choose('Z', 7, grid);
+      expect(game.winner('Z')).not.toBe('Z');
+    });
+
   });
 });
