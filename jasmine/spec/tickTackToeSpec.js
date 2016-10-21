@@ -69,12 +69,12 @@ describe('winning', function() {
     });
     it('game knows when X is a winner', function() {
       game.play('X', 1);
-      expect(game.winner()).toEqual("X");
+      expect(game.winner()).toEqual("X wins!");
     });
 
     it('game knows when O is a winner', function() {
       game.play('O', 1);
-      expect(game.winner()).toEqual("O");
+      expect(game.winner()).toEqual("O wins!");
     });
 
     it('game knows when there is not a winner', function() {
@@ -94,7 +94,7 @@ describe('winning', function() {
       });
 
       it('game knows when theres a draw', function() {
-        expect(game.play('X', 1)).toEqual('Draw');
+        expect(game.play('X', 1)).toEqual('Its a draw!');
       });
     });
 });

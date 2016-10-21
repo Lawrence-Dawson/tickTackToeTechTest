@@ -16,7 +16,7 @@ function Game() {
 
     function choose(letter, gridNum, array) {
         if (array.indexOf(letter) === false) {
-          throw new Error("That location choice has already been taken!");
+          throw new Error("That place is already taken!");
           }
         else {
           for(var i = 0; i < array.length; i++) {
@@ -26,28 +26,30 @@ function Game() {
               if (arrSection[j] === gridNum) {
                   arrSection[j] = letter;
                   choose(letter, gridNum, game._winningSolutions);
-                }
               }
             }
           }
         }
-        return game.gameStatus();
+      }
+
+      game.winner();
+      return game.gameStatus();
       };
 
     Game.prototype.winner = function () {
       for (var i = 0; i < this._winningSolutions.length; i++) {
         var arrSection = this._winningSolutions[i].toString();
         if (arrSection === "X,X,X") {
-          return arrSection[0];
+          return arrSection[0] + " wins!";
         }
         else if (arrSection === "O,O,O") {
-            return arrSection[0];
+            return arrSection[0] + " wins!";
         }
       }
-  };
+    };
 
-  Game.prototype.gameStatus = function () {
-    if (this._plays === 0 ) {
-      return 'Draw';
-      }
+    Game.prototype.gameStatus = function () {
+      if (this._plays === 0 ) {
+        return 'Its a draw!';
+        }
     };
