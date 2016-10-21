@@ -32,19 +32,19 @@ function Game() {
               }
             }
           }
+        };
 
-  Game.prototype.winner = function () {
-    for (var i = 0; i < this._winningSolutions.length; i++) {
-      var arrSection = this._winningSolutions[i].toString();
-      if (arrSection === "X,X,X") {
-        return arrSection[0];
-      }
-      else if (arrSection === "O,O,O") {
+    Game.prototype.winner = function () {
+      for (var i = 0; i < this._winningSolutions.length; i++) {
+        var arrSection = this._winningSolutions[i].toString();
+        if (arrSection === "X,X,X") {
           return arrSection[0];
+        }
+        else if (arrSection === "O,O,O") {
+            return arrSection[0];
+        }
       }
-    }
   };
-};
 
   function gameStatus() {
     if (this._plays > 0 ) {
