@@ -1,6 +1,8 @@
 ### Tick Tack Toe Tech Test
 
-For this test I was tasked with building a simple Tick Tack Toe app
+For this test I was tasked with building a simple Tick Tack Toe app in any language.
+
+I chose to build the app in Javascript.
 
 ## Installation
 
@@ -18,4 +20,4 @@ For this test I was tasked with building a simple Tick Tack Toe app
 
  - Continue playing, the game will tell you when there's a winner or if it's a draw!
 
- I hope you enjoy this game, I hope to build an interface for the game at some point in the near future.
+I hope you enjoy this game, I hope to build an interface for it at some point in the near future.
