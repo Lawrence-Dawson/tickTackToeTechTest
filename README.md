@@ -1,4 +1,4 @@
-### Tick Tack Toe Tech Test
+# Tick Tack Toe Tech Test
 
 For this test I was tasked with building a simple Tick Tack Toe app in any language.
 
