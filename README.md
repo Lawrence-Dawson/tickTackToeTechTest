@@ -12,9 +12,11 @@ I chose to build the app in Javascript.
 
  - Open the index.html file and open the console
  - Enter "game = new Game;" in the console
- - The tick tack toe game is on a grid (array of arrays) like so: [[1,2,3],
-                                                                   [4,5,6],
-                                                                   [7,8,9]];
+ - The tick tack toe game is on a grid (array of arrays) like so: 
+ 
+    [[1,2,3],
+     [4,5,6],
+     [7,8,9]];
                                                       
  - Enter the number you wish to replace with either an 'X' or 'O' by calling the "choose" function
  e.g. "game.choose('X', 5)"
